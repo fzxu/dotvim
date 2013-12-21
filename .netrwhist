@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/axu/prj/intalio/code/neocore'
+let g:netrw_dirhist_2='/Users/axu/prj/intalio/code/neocore/api'
+let g:netrw_dirhist_3='/Users/axu/prj/intalio/code/neocore/api/src'
+let g:netrw_dirhist_4='/Users/axu/prj/intalio/code/neocore'
