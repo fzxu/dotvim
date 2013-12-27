@@ -12,6 +12,7 @@ filetype plugin indent on
 colorscheme desert 
 syntax on
 
+set ruler 
 
 " CtrlP
 " https://github.com/kien/ctrlp.vim
