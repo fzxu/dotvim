@@ -14,6 +14,7 @@ syntax on
 
 set ruler 
 set hlsearch
+filetype plugin on
 
 " CtrlP
 " https://github.com/kien/ctrlp.vim
