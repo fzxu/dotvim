@@ -13,6 +13,7 @@ colorscheme desert
 syntax on
 
 set ruler 
+set hlsearch
 
 " CtrlP
 " https://github.com/kien/ctrlp.vim
