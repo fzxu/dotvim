@@ -1,7 +1,7 @@
 call pathogen#infect()
 
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
 filetype off
