@@ -14,6 +14,7 @@ syntax on
 
 set ruler 
 set hlsearch
+set autoread
 filetype plugin on
 
 " CtrlP
