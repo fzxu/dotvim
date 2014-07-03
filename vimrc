@@ -26,7 +26,7 @@ set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.class,*.pyc
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 
 " Some mappings
-map <D-r> :!$HOME/.rvm/bin/rvm-auto-ruby %<cr>
+map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
 
 autocmd FileType go compiler go
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
