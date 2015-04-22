@@ -30,3 +30,11 @@ map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
 
 autocmd FileType go compiler go
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+augroup vimrc_autocmds
+    autocmd!
+    " highlight characters past column 120
+    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+    autocmd FileType python match Excess /\%80v.*/
+    autocmd FileType python set nowrap
+    augroup END
