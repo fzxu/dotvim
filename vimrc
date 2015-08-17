@@ -11,7 +11,7 @@ set nofoldenable
 filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
+"filetype plugin indent on
 
 colorscheme desert 
 syntax on
@@ -39,3 +39,4 @@ augroup vimrc_autocmds
     autocmd FileType python match Excess /\%80v.*/
     autocmd FileType python set nowrap
     augroup END
+
