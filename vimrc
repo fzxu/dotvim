@@ -32,6 +32,9 @@ map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
 autocmd FileType go compiler go
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
+" jsx
+let g:jsx_ext_required = 0
+
 augroup vimrc_autocmds
     autocmd!
     " highlight characters past column 120
