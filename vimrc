@@ -35,6 +35,14 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " jsx
 let g:jsx_ext_required = 0
 
+" syntastic
+set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 augroup vimrc_autocmds
     autocmd!
     " highlight characters past column 120
