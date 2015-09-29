@@ -21,6 +21,9 @@ set hlsearch
 set autoread
 filetype plugin on
 
+" nerdtree
+let NERDTreeShowHidden=1
+
 " CtrlP
 " https://github.com/kien/ctrlp.vim
 set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.class,*.pyc
