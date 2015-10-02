@@ -8,10 +8,9 @@ set expandtab
 set nofoldenable
 
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
-filetype off
-filetype plugin indent off
+"filetype off
 set runtimepath+=$GOROOT/misc/vim
-"filetype plugin indent on
+filetype plugin indent on
 
 colorscheme desert 
 syntax on
@@ -20,6 +19,7 @@ set ruler
 set hlsearch
 set autoread
 filetype plugin on
+filetype indent on
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -31,12 +31,17 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 
 " Some mappings
 map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
+map <F8> :!python %<CR>
 
 autocmd FileType go compiler go
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " jsx
 let g:jsx_ext_required = 0
+
+" statusline
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+set laststatus=2
 
 " syntastic
 set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
@@ -45,6 +50,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" vim airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 augroup vimrc_autocmds
     autocmd!
