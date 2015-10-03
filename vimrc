@@ -8,7 +8,7 @@ set expandtab
 set nofoldenable
 
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
-"filetype off
+"filetype on
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
@@ -23,6 +23,8 @@ filetype indent on
 
 " nerdtree
 let NERDTreeShowHidden=1
+" default open nerdtree window
+"au VimEnter *  NERDTree
 
 " CtrlP
 " https://github.com/kien/ctrlp.vim
@@ -31,13 +33,13 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 
 " Some mappings
 map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
-map <F8> :!python %<CR>
+map <F8> :!$VIRTUAL_ENV/bin/python %<CR>
 
 autocmd FileType go compiler go
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " jsx
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 
 " statusline
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
@@ -50,11 +52,16 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 5
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_python_exec = '$VIRTUAL_ENV/bin/python'
+let g:syntastic_python_checkers = ['flake8']
 
 " vim airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#enabled = 1
 
 augroup vimrc_autocmds
     autocmd!
