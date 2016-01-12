@@ -8,7 +8,7 @@ set expandtab
 set nofoldenable
 
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
-"filetype on
+filetype off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
@@ -34,9 +34,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 " Some mappings
 map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
 map <F8> :!$VIRTUAL_ENV/bin/python %<CR>
-
-autocmd FileType go compiler go
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " jsx
 let g:jsx_ext_required = 1
