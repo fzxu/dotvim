@@ -35,15 +35,15 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
 map <F8> :!$VIRTUAL_ENV/bin/python %<CR>
 
-" jsx
-let g:jsx_ext_required = 1
-
 " statusline
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set laststatus=2
 
 " syntastic
-set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+"set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -53,6 +53,9 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_python_exec = '$VIRTUAL_ENV/bin/python'
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_go_checkers = ['go', 'govet']
+let g:go_list_type = "quickfix"
+let g:syntastic_aggregate_errors = 1
 
 " vim airline
 let g:airline#extensions#tabline#enabled = 1
