@@ -53,7 +53,7 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_python_exec = '$VIRTUAL_ENV/bin/python'
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_go_checkers = ['go', 'govet']
+let g:syntastic_go_checkers = ['go']
 let g:go_list_type = "quickfix"
 let g:syntastic_aggregate_errors = 1
 
