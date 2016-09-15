@@ -9,7 +9,6 @@ set nofoldenable
 
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
 filetype off
-"set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
 colorscheme desert
@@ -22,7 +21,7 @@ filetype plugin on
 filetype indent on
 
 " set leader key
-:let mapleader = ","
+:let mapleader = "\\"
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -42,18 +41,23 @@ nmap <F8> :TagbarToggle<CR>
 " statusline
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set laststatus=2
+set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 " syntastic
-"set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
 " vim-go
 let g:go_list_type = "quickfix"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 "let g:go_fmt_command = "goimports"
 let g:go_snippet_case_type = "camelcase"
 
