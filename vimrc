@@ -12,10 +12,10 @@ filetype off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
-colorscheme desert 
+colorscheme desert
 syntax on
 
-set ruler 
+set ruler
 set hlsearch
 set autoread
 filetype plugin on
@@ -34,6 +34,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|idea|node_modules)$'
 " Some mappings
 map <D-r> :!$HOME/.rbenv/shims/ruby %<cr>
 map <F8> :!$VIRTUAL_ENV/bin/python %<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " statusline
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
@@ -71,4 +72,3 @@ augroup vimrc_autocmds
     autocmd FileType python match Excess /\%80v.*/
     autocmd FileType python set nowrap
     augroup END
-
