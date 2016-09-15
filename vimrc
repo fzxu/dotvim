@@ -9,7 +9,7 @@ set nofoldenable
 
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
 filetype off
-set runtimepath+=$GOROOT/misc/vim
+"set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
 colorscheme desert
@@ -20,6 +20,9 @@ set hlsearch
 set autoread
 filetype plugin on
 filetype indent on
+
+" set leader key
+:let mapleader = ","
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -46,17 +49,19 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 5
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_python_exec = '$VIRTUAL_ENV/bin/python'
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_go_checkers = ['go']
+" vim-go
 let g:go_list_type = "quickfix"
-let g:syntastic_aggregate_errors = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+"let g:go_fmt_command = "goimports"
+let g:go_snippet_case_type = "camelcase"
+
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
 " vim airline
 let g:airline#extensions#tabline#enabled = 1
