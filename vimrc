@@ -49,7 +49,7 @@ set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():
 " syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+let g:syntastic_go_checkers = ['go', 'errcheck']
 
 " vim-go
 let g:go_list_type = "quickfix"
@@ -61,8 +61,8 @@ let g:go_highlight_build_constraints = 1
 "let g:go_fmt_command = "goimports"
 let g:go_snippet_case_type = "camelcase"
 
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
+map <C-j> :cnext<CR>
+map <C-k> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
